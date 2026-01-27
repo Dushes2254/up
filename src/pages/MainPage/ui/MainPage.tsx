@@ -1,9 +1,9 @@
+import { useTranslation } from 'react-i18next';
+
 const MainPage = () => {
-  return (
-    <div onClick={e => console.log(e)}>
-      <div>MainPage</div>
-    </div>
-  );
+  const { t } = useTranslation();
+
+  return <div>{t('MainPage')}</div>;
 };
 
 export default MainPage;
