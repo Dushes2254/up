@@ -1,7 +1,12 @@
 {
-  "i18n-ally.localesPaths": [
-    "public/locales",
-    "src/shared/config/i18n"
-  ],
+  // TODO: разобраться с форматированием
+  "editor.formatOnSave": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "always",
+    "source.fixAll.prettier": "never"
+  },
+  // ---
+  "files.eol": "\n",
+  "i18n-ally.localesPaths": ["public/locales", "src/shared/config/i18n"],
   "i18n-ally.keystyle": "nested"
 }
