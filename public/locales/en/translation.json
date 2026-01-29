@@ -1,5 +1,7 @@
 {
   "Text": "Text",
   "Language": "English",
-  "MainPage": "Main Page"
+  "MainPage": "Main Page",
+  "AboutPage": "About Page",
+  "Loading": "Loading"
 }
