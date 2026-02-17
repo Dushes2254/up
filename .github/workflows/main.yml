@@ -26,7 +26,9 @@ jobs:
         run: npm run lint:ts
       - name: Lint SCSS
         run: npm run lint:scss
-      - name: Build Storybook
-        run: npm run storybook:build
+      - name: Install http-server
+        run: npm install -g http-server
+      - name: Start Storybook server
+        run: http-server storybook-static -p 6006 --cors -a 0.0.0.0 & sleep 10
       - name: Run UI tests
         run: npm run test:ui:ci
