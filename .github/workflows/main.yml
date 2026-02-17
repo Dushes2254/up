@@ -1,11 +1,11 @@
-name: GitHub Actions Demo
+name: Main - linting, testing, building
 on:
   push:
     branches: [master]
   pull_request:
     branches: [master]
 jobs:
-  init:
+  pipeline:
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -20,7 +20,7 @@ jobs:
         run: npm install
       - name: Build project
         run: npm run build:prod
-      - name: Run tests
+      - name: Run unit tests
         run: npm run test:unit
       - name: Lint TS
         run: npm run lint:ts
