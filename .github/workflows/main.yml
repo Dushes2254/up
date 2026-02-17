@@ -7,6 +7,12 @@ on:
 jobs:
   pipeline:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    services:
+      docker:
+        image: docker:24-dind
+        options: --privileged
     strategy:
       matrix:
         node-version: [17.x]
@@ -26,9 +32,7 @@ jobs:
         run: npm run lint:ts
       - name: Lint SCSS
         run: npm run lint:scss
-      - name: Install http-server
-        run: npm install -g http-server
-      - name: Start Storybook server
-        run: http-server storybook-static -p 6006 --cors -a 0.0.0.0 & sleep 10
+      - name: Build Storybook
+        run: npm run storybook:build
       - name: Run UI tests
         run: npm run test:ui:ci
