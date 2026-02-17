@@ -1,4 +1,4 @@
-name: Main - linting, testing, building
+name: linting, testing, building
 on:
   push:
     branches: [master]
@@ -7,32 +7,27 @@ on:
 jobs:
   pipeline:
     runs-on: ubuntu-latest
-    permissions:
-      contents: read
-    services:
-      docker:
-        image: docker:24-dind
-        options: --privileged
     strategy:
       matrix:
         node-version: [17.x]
+
     steps:
-      - uses: actions/checkout@v3
-      - name: Starting Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+      - uses: actions/checkout@v2
+      - name: Staring Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Install dependencies
+      - name: install modules
         run: npm install
-      - name: Build project
+      - name: build production project
         run: npm run build:prod
-      - name: Run unit tests
-        run: npm run test:unit
-      - name: Lint TS
+      - name: linting typescript
         run: npm run lint:ts
-      - name: Lint SCSS
+      - name: linting css
         run: npm run lint:scss
-      - name: Build Storybook
+      - name: unit testing
+        run: npm run test:unit
+      - name: build storybook
         run: npm run storybook:build
-      - name: Run UI tests
+      - name: screenshot testing
         run: npm run test:ui:ci
