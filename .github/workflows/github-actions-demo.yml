@@ -19,7 +19,7 @@ jobs:
       - name: Install dependencies
         run: npm install
       - name: Build project
-        run: npm run build:dev
+        run: npm run build:prod
       - name: Run tests
         run: npm run test:unit
       - name: Lint TS
