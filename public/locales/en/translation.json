@@ -1,8 +1,9 @@
 {
   "Text": "Text",
   "Language": "English",
-  "MainPage": "Main Page",
-  "AboutPage": "About Page",
+  "Lang": "EN",
+  "MainPage": "Main",
+  "AboutPage": "About",
   "NotFoundPage": "Page not found",
   "UnexpectedError": "An unexpected error has occurred",
   "RefreshPage": "Refresh the page",

@@ -1,8 +1,9 @@
 {
   "Text": "Текст",
   "Language": "Русский",
-  "MainPage": "Главная страница",
-  "AboutPage": "О нас",
+  "Lang": "RU",
+  "MainPage": "Главная",
+  "AboutPage": "О сайте",
   "NotFoundPage": "Страница не найдена",
   "UnexpectedError": "Произошла непредвиденная ошибка",
   "RefreshPage": "Обновить страницу",
