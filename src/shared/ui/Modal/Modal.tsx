@@ -53,11 +53,10 @@ export const Modal: FC<ModalProps> = (props) => {
   useEffect(() => {
     if (isOpen) {
       window.addEventListener('keydown', onKeyDown);
-    }
-    return () => {
+    } else {
       window.removeEventListener('keydown', onKeyDown);
       clearTimeout(timerRef.current);
-    };
+    }
   }, [isOpen, onKeyDown]);
 
   return (
