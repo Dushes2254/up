@@ -9,7 +9,6 @@ export default {
   component: Button,
 } as ComponentMeta<typeof Button>;
 
-// eslint-disable-next-line react/jsx-props-no-spreading
 const Template: ComponentStory<typeof Button> = (args) => <Button {...args} />;
 
 export const Primary = Template.bind({});
@@ -21,6 +20,12 @@ export const Clear = Template.bind({});
 Clear.args = {
   children: 'Button',
   theme: ButtonTheme.CLEAR,
+};
+
+export const ClearInverted = Template.bind({});
+ClearInverted.args = {
+  children: 'Button',
+  theme: ButtonTheme.CLEAR_INVERTED,
 };
 
 export const Outline = Template.bind({});

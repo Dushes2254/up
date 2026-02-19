@@ -1,7 +1,8 @@
 import { classNames } from 'shared/lib/classNames/classNames';
-import { AppLink, AppLinkTheme } from 'shared/ui/AppLink/AppLink';
 import { useTranslation } from 'react-i18next';
-import { AppRoutes, RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Button, ButtonTheme } from 'shared/ui/Button/Button';
+import { Modal } from 'shared/ui/Modal/Modal';
+import { useCallback, useState } from 'react';
 import cls from './Navbar.module.scss';
 
 interface NavbarProps {
@@ -11,9 +12,21 @@ interface NavbarProps {
 export const Navbar = ({ className }: NavbarProps) => {
   const { t } = useTranslation();
 
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const onToggleModal = useCallback(() => {
+    setIsModalOpen((prev) => !prev);
+  }, []);
+
   return (
     <div className={classNames(cls.navbar, {}, [className])}>
-      <div className={cls.links} />
+      <Button theme={ButtonTheme.CLEAR_INVERTED} className={cls.links} onClick={onToggleModal}>
+        {t('Enter')}
+      </Button>
+      <Modal isOpen={isModalOpen} onClose={onToggleModal}>
+        {/* eslint-disable-next-line i18next/no-literal-string */}
+        <h1>Lorem</h1>
+      </Modal>
     </div>
   );
 };

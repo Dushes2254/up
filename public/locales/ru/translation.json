@@ -7,5 +7,6 @@
   "NotFoundPage": "Страница не найдена",
   "UnexpectedError": "Произошла непредвиденная ошибка",
   "RefreshPage": "Обновить страницу",
-  "ThrowError": "Ошибка"
+  "ThrowError": "Ошибка",
+  "Enter": "Войти"
 }
