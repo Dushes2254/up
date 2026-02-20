@@ -8,5 +8,7 @@
   "UnexpectedError": "An unexpected error has occurred",
   "RefreshPage": "Refresh the page",
   "ThrowError": "Error",
-  "Enter": "Enter"
+  "Enter": "Enter",
+  "Increment": "Increment",
+  "Decrement": "Decrement"
 }

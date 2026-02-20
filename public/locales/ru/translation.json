@@ -8,5 +8,7 @@
   "UnexpectedError": "Произошла непредвиденная ошибка",
   "RefreshPage": "Обновить страницу",
   "ThrowError": "Ошибка",
-  "Enter": "Войти"
+  "Enter": "Войти",
+  "Increment": "Увеличение",
+  "Decrement": "Уменьшение"
 }
