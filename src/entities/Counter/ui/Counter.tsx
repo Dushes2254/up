@@ -6,17 +6,14 @@ import { getCounterValue } from '../model/selectors/getCounterValue/getCounterVa
 import cls from './Counter.module.scss';
 
 export const Counter = () => {
-  const dispatch = useDispatch();
-  const value = useSelector(getCounterValue);
   const { t } = useTranslation();
 
-  const increment = () => {
-    dispatch(counterActions.increment());
-  };
+  const dispatch = useDispatch();
+  const value = useSelector(getCounterValue);
 
-  const decrement = () => {
-    dispatch(counterActions.decrement());
-  };
+  const increment = () => dispatch(counterActions.increment());
+
+  const decrement = () => dispatch(counterActions.decrement());
 
   return (
     <div className={cls.counter}>

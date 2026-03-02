@@ -16,7 +16,7 @@ export const componentRender = (component: ReactNode, options: ComponentRenderOp
   const { route = RoutePath[AppRoutes.MAIN], initialState } = options;
 
   return render(
-    <StoreProvider initialState={initialState}>
+    <StoreProvider initialState={initialState as StateSchema}>
       <MemoryRouter initialEntries={[route]}>
         <I18nextProvider i18n={i18n}>{component}</I18nextProvider>
       </MemoryRouter>
