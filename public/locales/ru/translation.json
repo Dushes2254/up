@@ -10,5 +10,8 @@
   "ThrowError": "Ошибка",
   "Enter": "Войти",
   "Increment": "Увеличение",
-  "Decrement": "Уменьшение"
+  "Decrement": "Уменьшение",
+  "Login": "Войти",
+  "Username": "Имя пользователя",
+  "Password": "Пароль"
 }

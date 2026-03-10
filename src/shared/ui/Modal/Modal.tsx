@@ -1,7 +1,5 @@
 import {
-  FC, ReactNode, MouseEvent, useState, useRef,
-  useEffect,
-  useCallback,
+  FC, ReactNode, MouseEvent, useState, useRef, useEffect, useCallback,
 } from 'react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 
@@ -15,14 +13,16 @@ interface ModalProps {
   children?: ReactNode;
   isOpen?: boolean;
   onClose?: () => void;
+  lazy?: boolean;
 }
 
 export const Modal: FC<ModalProps> = (props) => {
   const {
-    className, children, isOpen, onClose,
+    className, children, isOpen, onClose, lazy = true,
   } = props;
 
   const [isClosing, setIsClosing] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const timerRef = useRef<ReturnType<typeof setTimeout>>();
 
   const closeHandler = useCallback(() => {
@@ -39,11 +39,14 @@ export const Modal: FC<ModalProps> = (props) => {
     e.stopPropagation();
   };
 
-  const onKeyDown = useCallback((e: KeyboardEvent) => {
-    if (e.key === 'Escape') {
-      closeHandler();
-    }
-  }, [closeHandler]);
+  const onKeyDown = useCallback(
+    (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        closeHandler();
+      }
+    },
+    [closeHandler],
+  );
 
   const mods: Mods = {
     [cls.opened]: isOpen,
@@ -58,6 +61,16 @@ export const Modal: FC<ModalProps> = (props) => {
       clearTimeout(timerRef.current);
     }
   }, [isOpen, onKeyDown]);
+
+  useEffect(() => {
+    if (isOpen && lazy) {
+      setIsMounted(true);
+    }
+  }, [isOpen, lazy]);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <Portal>

@@ -27,7 +27,7 @@ module.exports = {
     'react/jsx-props-no-spreading': [
       'warn',
       {
-        exceptions: ['Link', 'button'],
+        exceptions: ['Link', 'button', 'input'],
       },
     ],
     'react/function-component-definition': 'off',

@@ -10,5 +10,8 @@
   "ThrowError": "Error",
   "Enter": "Enter",
   "Increment": "Increment",
-  "Decrement": "Decrement"
+  "Decrement": "Decrement",
+  "Login": "Login",
+  "Username": "Username",
+  "Password": "Password"
 }
