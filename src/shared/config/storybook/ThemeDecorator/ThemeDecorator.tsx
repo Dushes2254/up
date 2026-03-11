@@ -4,7 +4,7 @@ import { classNames } from 'shared/lib/classNames/classNames';
 
 export const ThemeDecorator = (theme: Theme) => (Story: ComponentType) => (
   <ThemeProvider initialTheme={theme}>
-    <div className={classNames('app', {}, [])}>
+    <div id="app" className={classNames('app', {}, [theme])}>
       <Story />
     </div>
   </ThemeProvider>
