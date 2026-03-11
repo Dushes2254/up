@@ -1,5 +1,5 @@
 import {
-  ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef, useState,
+  ChangeEvent, InputHTMLAttributes, memo, useEffect, useRef,
 } from 'react';
 import { classNames } from 'shared/lib/classNames/classNames';
 
@@ -19,52 +19,22 @@ export const Input = memo((props: InputProps) => {
     className, value, onChange, type = 'text', placeholder, autofocus, ...otherProps
   } = props;
 
-  const [isFocused, setIsFocused] = useState(false);
-  const [caretPosition, setCaretPosition] = useState(0);
-
   const ref = useRef<HTMLInputElement>(null);
 
   const onChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     onChange?.(e.target.value);
-    setCaretPosition(e.target.value.length);
-  };
-
-  const onFocus = () => {
-    setIsFocused(true);
-  };
-
-  const onBlur = () => {
-    setIsFocused(false);
-  };
-
-  const onSelect = (e: ChangeEvent<HTMLInputElement>) => {
-    setCaretPosition(e.target.selectionStart || 0);
   };
 
   useEffect(() => {
     if (autofocus) {
-      setIsFocused(true);
       ref.current?.focus();
     }
   }, [autofocus]);
 
   return (
     <div className={classNames(cls.inputWrapper, {}, [className])}>
-      {placeholder && <span>{`${placeholder}>`}</span>}
-      <div className={cls.caretWrapper}>
-        <input
-          className={cls.input}
-          value={value}
-          onChange={onChangeHandler}
-          type={type}
-          onFocus={onFocus}
-          onBlur={onBlur}
-          onSelect={onSelect}
-          ref={ref}
-          {...otherProps}
-        />
-        {isFocused && <span className={cls.caret} style={{ left: `${caretPosition * 9}px` }} />}
-      </div>
+      {placeholder && <span>{placeholder}</span>}
+      <input className={cls.input} value={value} onChange={onChangeHandler} type={type} ref={ref} {...otherProps} />
     </div>
   );
 });

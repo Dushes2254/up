@@ -1,42 +1,18 @@
 .inputWrapper {
   display: flex;
+  justify-content: space-between;
   gap: 10px;
+  align-items: center;
 }
 
 .input {
-  background-color: transparent;
+  border: 2px solid var(--inverted-bg-color);
+  border-radius: 5px;
+  padding: 5px;
   outline: none;
-  border: none;
-  width: 100%;
-  color: transparent;
-  text-shadow: 0 0 0 var(--primary-color);
 
   &:focus {
     outline: none;
-  }
-}
-
-.caretWrapper {
-  position: relative;
-  flex-grow: 1;
-}
-
-.caret {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 9px;
-  height: 3px;
-  background-color: var(--primary-color);
-  animation: blink 0.7s infinite;
-}
-
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
+    border: 2px solid var(--primary-color);
   }
 }

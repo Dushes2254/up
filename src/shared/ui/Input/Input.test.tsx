@@ -9,7 +9,7 @@ describe('Input', () => {
 
   test('render with placeholder', () => {
     render(<Input placeholder="Enter text" />);
-    expect(screen.getByText('Enter text>')).toBeInTheDocument();
+    expect(screen.getByText('Enter text')).toBeInTheDocument();
   });
 
   test('onChange called', () => {
@@ -24,20 +24,6 @@ describe('Input', () => {
     render(<Input autofocus />);
     const input = screen.getByRole('textbox');
     expect(input).toHaveFocus();
-  });
-
-  test('caret visible on focus', () => {
-    const { container } = render(<Input autofocus />);
-    expect(container.querySelector('.caret')).toBeInTheDocument();
-  });
-
-  test('caret hidden on blur', () => {
-    const { container } = render(<Input />);
-    const input = screen.getByRole('textbox');
-    fireEvent.focus(input);
-    expect(container.querySelector('.caret')).toBeInTheDocument();
-    fireEvent.blur(input);
-    expect(container.querySelector('.caret')).not.toBeInTheDocument();
   });
 
   test('additional className', () => {

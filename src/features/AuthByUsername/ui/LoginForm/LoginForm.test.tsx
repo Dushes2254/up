@@ -5,8 +5,8 @@ import { LoginForm } from './LoginForm';
 describe('LoginForm', () => {
   test('render', () => {
     componentRender(<LoginForm />);
-    expect(screen.getByText('Username>')).toBeInTheDocument();
-    expect(screen.getByText('Password>')).toBeInTheDocument();
+    expect(screen.getByText('Username')).toBeInTheDocument();
+    expect(screen.getByText('Password')).toBeInTheDocument();
     expect(screen.getByText('Login')).toBeInTheDocument();
   });
 
