@@ -8,10 +8,12 @@
   "UnexpectedError": "An unexpected error has occurred",
   "RefreshPage": "Refresh the page",
   "ThrowError": "Error",
-  "Enter": "Enter",
+  "Login": "Login",
+  "Logout": "Logout",
   "Increment": "Increment",
   "Decrement": "Decrement",
-  "Login": "Login",
   "Username": "Username",
-  "Password": "Password"
+  "Password": "Password",
+  "AuthorizationForm": "Authorization form",
+  "IncorrectUsernameOrPassword": "Incorrect username or password"
 }

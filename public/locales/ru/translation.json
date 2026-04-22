@@ -8,10 +8,12 @@
   "UnexpectedError": "Произошла непредвиденная ошибка",
   "RefreshPage": "Обновить страницу",
   "ThrowError": "Ошибка",
-  "Enter": "Войти",
+  "Login": "Войти",
+  "Logout": "Выйти",
   "Increment": "Увеличение",
   "Decrement": "Уменьшение",
-  "Login": "Войти",
   "Username": "Имя пользователя",
-  "Password": "Пароль"
+  "Password": "Пароль",
+  "AuthorizationForm": "Форма авторизации",
+  "IncorrectUsernameOrPassword": "Некорректное имя пользователя или пароль"
 }
