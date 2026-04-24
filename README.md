@@ -20,7 +20,8 @@
 - [x] Babel
 - [x] CI/CD
 - [x] Pre-commit хуки
-- [X] json-server
+- [x] Code splitting
+- [x] Json-server
 - [ ] e2e тестирование
 - [ ] Нормализация данных
 - [ ] Виртуализация
