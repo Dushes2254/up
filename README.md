@@ -39,7 +39,8 @@
 - [ ] Деплой и nginx
 - [ ] Browserlist
 - [ ] Мобилки и десктоп. Разные user agents
-- [ ] Git flow vs trunk based. Feature flags, user settings
+- [ ] Git flow vs trunk based
+- [ ] Feature flags, user settings
 - [ ] Редизайн и автоматизация
 - [ ] Миграция на React 19
 - [ ] Настройка окружения для работы с AI-агентами
