@@ -22,11 +22,11 @@ export const buildPlugins = ({ paths, isDev }: BuildOptions): WebpackPluginInsta
 
   if (isDev) {
     plugins.push(new HotModuleReplacementPlugin());
-    plugins.push(
-      new BundleAnalyzerPlugin({
-        openAnalyzer: false,
-      }),
-    );
+    // plugins.push(
+    //   new BundleAnalyzerPlugin({
+    //     openAnalyzer: false,
+    //   }),
+    // );
   }
 
   return plugins;
